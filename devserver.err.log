@@ -1,0 +1,309 @@
+[2m12:52:34 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled rejection] [1mError[22m: Unknown font format
+[39m > Object.create ../../npm/@pdf-lib/fontkit@1.1.1/+esm:7:207543
+ > CustomFontEmbedder.<anonymous> node_modules/pdf-lib/es/core/embedders/CustomFontEmbedder.js:37:57
+ > step node_modules/pdf-lib/node_modules/tslib/tslib.es6.js:100:22
+ > Object.next node_modules/pdf-lib/node_modules/tslib/tslib.es6.js:81:52
+ > node_modules/pdf-lib/node_modules/tslib/tslib.es6.js:74:70
+ > __awaiter node_modules/pdf-lib/node_modules/tslib/tslib.es6.js:70:11
+ > CustomFontEmbedder.for node_modules/pdf-lib/es/core/embedders/CustomFontEmbedder.js:33:15
+ > PDFDocument.<anonymous> node_modules/pdf-lib/es/api/PDFDocument.js:881:72
+ > step node_modules/pdf-lib/node_modules/tslib/tslib.es6.js:100:22
+
+[2m12:52:48 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled rejection] [1mError[22m: Unknown font format
+[39m > Object.create ../../npm/@pdf-lib/fontkit@1.1.1/+esm:7:207543
+ > CustomFontEmbedder.<anonymous> node_modules/pdf-lib/es/core/embedders/CustomFontEmbedder.js:37:57
+ > step node_modules/pdf-lib/node_modules/tslib/tslib.es6.js:100:22
+ > Object.next node_modules/pdf-lib/node_modules/tslib/tslib.es6.js:81:52
+ > node_modules/pdf-lib/node_modules/tslib/tslib.es6.js:74:70
+ > __awaiter node_modules/pdf-lib/node_modules/tslib/tslib.es6.js:70:11
+ > CustomFontEmbedder.for node_modules/pdf-lib/es/core/embedders/CustomFontEmbedder.js:33:15
+ > PDFDocument.<anonymous> node_modules/pdf-lib/es/api/PDFDocument.js:881:72
+ > step node_modules/pdf-lib/node_modules/tslib/tslib.es6.js:100:22
+
+[2m12:53:23 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled rejection] [1mError[22m: Unknown font format
+[39m > Object.create ../../npm/@pdf-lib/fontkit@1.1.1/+esm:7:207543
+ > CustomFontEmbedder.<anonymous> node_modules/pdf-lib/es/core/embedders/CustomFontEmbedder.js:37:57
+ > step node_modules/pdf-lib/node_modules/tslib/tslib.es6.js:100:22
+ > Object.next node_modules/pdf-lib/node_modules/tslib/tslib.es6.js:81:52
+ > node_modules/pdf-lib/node_modules/tslib/tslib.es6.js:74:70
+ > __awaiter node_modules/pdf-lib/node_modules/tslib/tslib.es6.js:70:11
+ > CustomFontEmbedder.for node_modules/pdf-lib/es/core/embedders/CustomFontEmbedder.js:33:15
+ > PDFDocument.<anonymous> node_modules/pdf-lib/es/api/PDFDocument.js:881:72
+ > step node_modules/pdf-lib/node_modules/tslib/tslib.es6.js:100:22
+
+[2m12:54:45 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mPDF generation failed: Error: Font fetch failed: 404
+    at http://127.0.0.1:5173/src/App.jsx?t=1779002674120:82:21
+    at async Promise.all (index 1)
+    at async openPersonalizedPdf (http://127.0.0.1:5173/src/App.jsx?t=1779002674120:78:47)
+    at async handlePdfOpen (http://127.0.0.1:5173/src/App.jsx?t=1779002674120:903:4)
+[2m1:03:59 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled rejection] [1mTypeError[22m: `font` must be of type `string` or `Uint8Array` or `ArrayBuffer`, but was actually of type `undefined`
+[39m > assertIs node_modules/pdf-lib/es/utils/validators.js:137:10
+ > PDFDocument.<anonymous> node_modules/pdf-lib/es/api/PDFDocument.js:867:24
+ > step node_modules/pdf-lib/node_modules/tslib/tslib.es6.js:100:22
+ > Object.next node_modules/pdf-lib/node_modules/tslib/tslib.es6.js:81:52
+ > node_modules/pdf-lib/node_modules/tslib/tslib.es6.js:74:70
+ > __awaiter node_modules/pdf-lib/node_modules/tslib/tslib.es6.js:70:11
+ > PDFDocument.embedFont node_modules/pdf-lib/es/api/PDFDocument.js:861:15
+ > openPersonalizedPdf src/App.jsx:90:33
+    88 |    const pdfDoc = await PDFDocument.load(existingPdfBytes);
+    89 |    const invitationPage = pdfDoc.getPage(1);
+    90 |    const typedFont = await pdfDoc.embedFont(StandardFonts.cinzelFontBytes);
+       |                                   ^
+    91 |    const displayName = guest || DEFAULT_GUEST;
+    92 |    const line = { x: 120, y: 581, width: 356 };
+ > handlePdfOpen src/App.jsx:445:6
+
+[2m1:05:09 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [31m[Unhandled rejection] [1mTypeError[22m: `font` must be of type `string` or `Uint8Array` or `ArrayBuffer`, but was actually of type `undefined`
+[39m > assertIs node_modules/pdf-lib/es/utils/validators.js:137:10
+ > PDFDocument.<anonymous> node_modules/pdf-lib/es/api/PDFDocument.js:867:24
+ > step node_modules/pdf-lib/node_modules/tslib/tslib.es6.js:100:22
+ > Object.next node_modules/pdf-lib/node_modules/tslib/tslib.es6.js:81:52
+ > node_modules/pdf-lib/node_modules/tslib/tslib.es6.js:74:70
+ > __awaiter node_modules/pdf-lib/node_modules/tslib/tslib.es6.js:70:11
+ > PDFDocument.embedFont node_modules/pdf-lib/es/api/PDFDocument.js:861:15
+ > openPersonalizedPdf src/App.jsx:90:33
+    88 |    const pdfDoc = await PDFDocument.load(existingPdfBytes);
+    89 |    const invitationPage = pdfDoc.getPage(1);
+    90 |    const typedFont = await pdfDoc.embedFont(StandardFonts.cinzelFontBytes);
+       |                                   ^
+    91 |    const displayName = guest || DEFAULT_GUEST;
+    92 |    const line = { x: 120, y: 581, width: 356 };
+ > handlePdfOpen src/App.jsx:445:6
+
+[2m1:19:15 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m Pre-transform error: Failed to resolve import "@pdf-lib/fontkit" from "src/App.jsx". Does the file exist?
+  Plugin: [35mvite:import-analysis[39m
+  File: [36mE:/WebApp/Wdding/src/App.jsx[39m:19:20
+[33m  4  |  import logoUrl from "../rm.png";
+  5  |  import pdfUrl from "../2026.06.06.pdf?url";
+  6  |  import fontkit from "@pdf-lib/fontkit";
+     |                       ^
+  7  |  var _jsxFileName = "E:/WebApp/Wdding/src/App.jsx";
+  8  |  import { jsxDEV as _jsxDEV } from "react/jsx-dev-runtime";[39m
+[2m1:19:15 PM[22m [31m[1m[vite][22m[39m [31mInternal server error: Failed to resolve import "@pdf-lib/fontkit" from "src/App.jsx". Does the file exist?[39m
+  Plugin: [35mvite:import-analysis[39m
+  File: [36mE:/WebApp/Wdding/src/App.jsx[39m:19:20
+[33m  4  |  import logoUrl from "../rm.png";
+  5  |  import pdfUrl from "../2026.06.06.pdf?url";
+  6  |  import fontkit from "@pdf-lib/fontkit";
+     |                       ^
+  7  |  var _jsxFileName = "E:/WebApp/Wdding/src/App.jsx";
+  8  |  import { jsxDEV as _jsxDEV } from "react/jsx-dev-runtime";[39m
+      at TransformPluginContext._formatLog (file:///E:/WebApp/Wdding/node_modules/vite/dist/node/chunks/node.js:30486:39)
+      at TransformPluginContext.error (file:///E:/WebApp/Wdding/node_modules/vite/dist/node/chunks/node.js:30483:14)
+      at normalizeUrl (file:///E:/WebApp/Wdding/node_modules/vite/dist/node/chunks/node.js:27725:18)
+      at async file:///E:/WebApp/Wdding/node_modules/vite/dist/node/chunks/node.js:27788:30
+      at async Promise.all (index 5)
+      at async TransformPluginContext.transform (file:///E:/WebApp/Wdding/node_modules/vite/dist/node/chunks/node.js:27756:4)
+      at async EnvironmentPluginContainer.transform (file:///E:/WebApp/Wdding/node_modules/vite/dist/node/chunks/node.js:30271:14)
+      at async loadAndTransform (file:///E:/WebApp/Wdding/node_modules/vite/dist/node/chunks/node.js:24532:26)
+[2m1:19:15 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22m[vite] Failed to reload /src/App.jsx. This could be due to syntax errors or importing non-existent modules. (see errors above)
+[2m1:19:16 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m Pre-transform error: Failed to resolve import "@pdf-lib/fontkit" from "src/App.jsx". Does the file exist?
+  Plugin: [35mvite:import-analysis[39m
+  File: [36mE:/WebApp/Wdding/src/App.jsx[39m:19:20
+[33m  4  |  import logoUrl from "../rm.png";
+  5  |  import pdfUrl from "../2026.06.06.pdf?url";
+  6  |  import fontkit from "@pdf-lib/fontkit";
+     |                       ^
+  7  |  var _jsxFileName = "E:/WebApp/Wdding/src/App.jsx";
+  8  |  import { jsxDEV as _jsxDEV } from "react/jsx-dev-runtime";[39m
+[2m1:19:16 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m Pre-transform error: Failed to resolve import "@pdf-lib/fontkit" from "src/App.jsx". Does the file exist?
+  Plugin: [35mvite:import-analysis[39m
+  File: [36mE:/WebApp/Wdding/src/App.jsx[39m:19:20
+[33m  4  |  import logoUrl from "../rm.png";
+  5  |  import pdfUrl from "../2026.06.06.pdf?url";
+  6  |  import fontkit from "@pdf-lib/fontkit";
+     |                       ^
+  7  |  var _jsxFileName = "E:/WebApp/Wdding/src/App.jsx";
+  8  |  import { jsxDEV as _jsxDEV } from "react/jsx-dev-runtime";[39m
+[2m1:19:16 PM[22m [31m[1m[vite][22m[39m [31mInternal server error: Failed to resolve import "@pdf-lib/fontkit" from "src/App.jsx". Does the file exist?[39m
+  Plugin: [35mvite:import-analysis[39m
+  File: [36mE:/WebApp/Wdding/src/App.jsx[39m:19:20
+[33m  4  |  import logoUrl from "../rm.png";
+  5  |  import pdfUrl from "../2026.06.06.pdf?url";
+  6  |  import fontkit from "@pdf-lib/fontkit";
+     |                       ^
+  7  |  var _jsxFileName = "E:/WebApp/Wdding/src/App.jsx";
+  8  |  import { jsxDEV as _jsxDEV } from "react/jsx-dev-runtime";[39m
+      at TransformPluginContext._formatLog (file:///E:/WebApp/Wdding/node_modules/vite/dist/node/chunks/node.js:30486:39)
+      at TransformPluginContext.error (file:///E:/WebApp/Wdding/node_modules/vite/dist/node/chunks/node.js:30483:14)
+      at normalizeUrl (file:///E:/WebApp/Wdding/node_modules/vite/dist/node/chunks/node.js:27725:18)
+      at async file:///E:/WebApp/Wdding/node_modules/vite/dist/node/chunks/node.js:27788:30
+      at async Promise.all (index 5)
+      at async TransformPluginContext.transform (file:///E:/WebApp/Wdding/node_modules/vite/dist/node/chunks/node.js:27756:4)
+      at async EnvironmentPluginContainer.transform (file:///E:/WebApp/Wdding/node_modules/vite/dist/node/chunks/node.js:30271:14)
+      at async loadAndTransform (file:///E:/WebApp/Wdding/node_modules/vite/dist/node/chunks/node.js:24532:26)
+      at async viteTransformMiddleware (file:///E:/WebApp/Wdding/node_modules/vite/dist/node/chunks/node.js:24326:20)
+[2m1:19:16 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m Pre-transform error: Failed to resolve import "@pdf-lib/fontkit" from "src/App.jsx". Does the file exist?
+  Plugin: [35mvite:import-analysis[39m
+  File: [36mE:/WebApp/Wdding/src/App.jsx[39m:19:20
+[33m  4  |  import logoUrl from "../rm.png";
+  5  |  import pdfUrl from "../2026.06.06.pdf?url";
+  6  |  import fontkit from "@pdf-lib/fontkit";
+     |                       ^
+  7  |  var _jsxFileName = "E:/WebApp/Wdding/src/App.jsx";
+  8  |  import { jsxDEV as _jsxDEV } from "react/jsx-dev-runtime";[39m
+[2m1:19:16 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m Pre-transform error: Failed to resolve import "@pdf-lib/fontkit" from "src/App.jsx". Does the file exist?
+  Plugin: [35mvite:import-analysis[39m
+  File: [36mE:/WebApp/Wdding/src/App.jsx[39m:19:20
+[33m  4  |  import logoUrl from "../rm.png";
+  5  |  import pdfUrl from "../2026.06.06.pdf?url";
+  6  |  import fontkit from "@pdf-lib/fontkit";
+     |                       ^
+  7  |  var _jsxFileName = "E:/WebApp/Wdding/src/App.jsx";
+  8  |  import { jsxDEV as _jsxDEV } from "react/jsx-dev-runtime";[39m
+[2m1:19:18 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m Pre-transform error: Failed to resolve import "@pdf-lib/fontkit" from "src/App.jsx". Does the file exist?
+  Plugin: [35mvite:import-analysis[39m
+  File: [36mE:/WebApp/Wdding/src/App.jsx[39m:19:20
+[33m  4  |  import logoUrl from "../rm.png";
+  5  |  import pdfUrl from "../2026.06.06.pdf?url";
+  6  |  import fontkit from "@pdf-lib/fontkit";
+     |                       ^
+  7  |  var _jsxFileName = "E:/WebApp/Wdding/src/App.jsx";
+  8  |  import { jsxDEV as _jsxDEV } from "react/jsx-dev-runtime";[39m
+[2m1:19:18 PM[22m [31m[1m[vite][22m[39m [31mInternal server error: Failed to resolve import "@pdf-lib/fontkit" from "src/App.jsx". Does the file exist?[39m
+  Plugin: [35mvite:import-analysis[39m
+  File: [36mE:/WebApp/Wdding/src/App.jsx[39m:19:20
+[33m  4  |  import logoUrl from "../rm.png";
+  5  |  import pdfUrl from "../2026.06.06.pdf?url";
+  6  |  import fontkit from "@pdf-lib/fontkit";
+     |                       ^
+  7  |  var _jsxFileName = "E:/WebApp/Wdding/src/App.jsx";
+  8  |  import { jsxDEV as _jsxDEV } from "react/jsx-dev-runtime";[39m
+      at TransformPluginContext._formatLog (file:///E:/WebApp/Wdding/node_modules/vite/dist/node/chunks/node.js:30486:39)
+      at TransformPluginContext.error (file:///E:/WebApp/Wdding/node_modules/vite/dist/node/chunks/node.js:30483:14)
+      at normalizeUrl (file:///E:/WebApp/Wdding/node_modules/vite/dist/node/chunks/node.js:27725:18)
+      at async file:///E:/WebApp/Wdding/node_modules/vite/dist/node/chunks/node.js:27788:30
+      at async Promise.all (index 5)
+      at async TransformPluginContext.transform (file:///E:/WebApp/Wdding/node_modules/vite/dist/node/chunks/node.js:27756:4)
+      at async EnvironmentPluginContainer.transform (file:///E:/WebApp/Wdding/node_modules/vite/dist/node/chunks/node.js:30271:14)
+      at async loadAndTransform (file:///E:/WebApp/Wdding/node_modules/vite/dist/node/chunks/node.js:24532:26)
+[2m1:20:04 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m Pre-transform error: Failed to resolve import "@pdf-lib/fontkit" from "src/App.jsx". Does the file exist?
+  Plugin: [35mvite:import-analysis[39m
+  File: [36mE:/WebApp/Wdding/src/App.jsx[39m:19:20
+[33m  4  |  import logoUrl from "../rm.png";
+  5  |  import pdfUrl from "../2026.06.06.pdf?url";
+  6  |  import fontkit from "@pdf-lib/fontkit";
+     |                       ^
+  7  |  var _jsxFileName = "E:/WebApp/Wdding/src/App.jsx";
+  8  |  import { jsxDEV as _jsxDEV } from "react/jsx-dev-runtime";[39m
+[2m1:20:04 PM[22m [31m[1m[vite][22m[39m [31mInternal server error: Failed to resolve import "@pdf-lib/fontkit" from "src/App.jsx". Does the file exist?[39m
+  Plugin: [35mvite:import-analysis[39m
+  File: [36mE:/WebApp/Wdding/src/App.jsx[39m:19:20
+[33m  4  |  import logoUrl from "../rm.png";
+  5  |  import pdfUrl from "../2026.06.06.pdf?url";
+  6  |  import fontkit from "@pdf-lib/fontkit";
+     |                       ^
+  7  |  var _jsxFileName = "E:/WebApp/Wdding/src/App.jsx";
+  8  |  import { jsxDEV as _jsxDEV } from "react/jsx-dev-runtime";[39m
+      at TransformPluginContext._formatLog (file:///E:/WebApp/Wdding/node_modules/vite/dist/node/chunks/node.js:30486:39)
+      at TransformPluginContext.error (file:///E:/WebApp/Wdding/node_modules/vite/dist/node/chunks/node.js:30483:14)
+      at normalizeUrl (file:///E:/WebApp/Wdding/node_modules/vite/dist/node/chunks/node.js:27725:18)
+      at async file:///E:/WebApp/Wdding/node_modules/vite/dist/node/chunks/node.js:27788:30
+      at async Promise.all (index 5)
+      at async TransformPluginContext.transform (file:///E:/WebApp/Wdding/node_modules/vite/dist/node/chunks/node.js:27756:4)
+      at async EnvironmentPluginContainer.transform (file:///E:/WebApp/Wdding/node_modules/vite/dist/node/chunks/node.js:30271:14)
+      at async loadAndTransform (file:///E:/WebApp/Wdding/node_modules/vite/dist/node/chunks/node.js:24532:26)
+[2m1:20:05 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m Pre-transform error: Failed to resolve import "@pdf-lib/fontkit" from "src/App.jsx". Does the file exist?
+  Plugin: [35mvite:import-analysis[39m
+  File: [36mE:/WebApp/Wdding/src/App.jsx[39m:19:20
+[33m  4  |  import logoUrl from "../rm.png";
+  5  |  import pdfUrl from "../2026.06.06.pdf?url";
+  6  |  import fontkit from "@pdf-lib/fontkit";
+     |                       ^
+  7  |  var _jsxFileName = "E:/WebApp/Wdding/src/App.jsx";
+  8  |  import { jsxDEV as _jsxDEV } from "react/jsx-dev-runtime";[39m
+[2m1:20:05 PM[22m [31m[1m[vite][22m[39m [31mInternal server error: Failed to resolve import "@pdf-lib/fontkit" from "src/App.jsx". Does the file exist?[39m
+  Plugin: [35mvite:import-analysis[39m
+  File: [36mE:/WebApp/Wdding/src/App.jsx[39m:19:20
+[33m  4  |  import logoUrl from "../rm.png";
+  5  |  import pdfUrl from "../2026.06.06.pdf?url";
+  6  |  import fontkit from "@pdf-lib/fontkit";
+     |                       ^
+  7  |  var _jsxFileName = "E:/WebApp/Wdding/src/App.jsx";
+  8  |  import { jsxDEV as _jsxDEV } from "react/jsx-dev-runtime";[39m
+      at TransformPluginContext._formatLog (file:///E:/WebApp/Wdding/node_modules/vite/dist/node/chunks/node.js:30486:39)
+      at TransformPluginContext.error (file:///E:/WebApp/Wdding/node_modules/vite/dist/node/chunks/node.js:30483:14)
+      at normalizeUrl (file:///E:/WebApp/Wdding/node_modules/vite/dist/node/chunks/node.js:27725:18)
+      at async file:///E:/WebApp/Wdding/node_modules/vite/dist/node/chunks/node.js:27788:30
+      at async Promise.all (index 5)
+      at async TransformPluginContext.transform (file:///E:/WebApp/Wdding/node_modules/vite/dist/node/chunks/node.js:27756:4)
+      at async EnvironmentPluginContainer.transform (file:///E:/WebApp/Wdding/node_modules/vite/dist/node/chunks/node.js:30271:14)
+      at async loadAndTransform (file:///E:/WebApp/Wdding/node_modules/vite/dist/node/chunks/node.js:24532:26)
+[2m1:20:06 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m Pre-transform error: Failed to resolve import "@pdf-lib/fontkit" from "src/App.jsx". Does the file exist?
+  Plugin: [35mvite:import-analysis[39m
+  File: [36mE:/WebApp/Wdding/src/App.jsx[39m:19:20
+[33m  4  |  import logoUrl from "../rm.png";
+  5  |  import pdfUrl from "../2026.06.06.pdf?url";
+  6  |  import fontkit from "@pdf-lib/fontkit";
+     |                       ^
+  7  |  var _jsxFileName = "E:/WebApp/Wdding/src/App.jsx";
+  8  |  import { jsxDEV as _jsxDEV } from "react/jsx-dev-runtime";[39m
+[2m1:20:06 PM[22m [31m[1m[vite][22m[39m [31mInternal server error: Failed to resolve import "@pdf-lib/fontkit" from "src/App.jsx". Does the file exist?[39m
+  Plugin: [35mvite:import-analysis[39m
+  File: [36mE:/WebApp/Wdding/src/App.jsx[39m:19:20
+[33m  4  |  import logoUrl from "../rm.png";
+  5  |  import pdfUrl from "../2026.06.06.pdf?url";
+  6  |  import fontkit from "@pdf-lib/fontkit";
+     |                       ^
+  7  |  var _jsxFileName = "E:/WebApp/Wdding/src/App.jsx";
+  8  |  import { jsxDEV as _jsxDEV } from "react/jsx-dev-runtime";[39m
+      at TransformPluginContext._formatLog (file:///E:/WebApp/Wdding/node_modules/vite/dist/node/chunks/node.js:30486:39)
+      at TransformPluginContext.error (file:///E:/WebApp/Wdding/node_modules/vite/dist/node/chunks/node.js:30483:14)
+      at normalizeUrl (file:///E:/WebApp/Wdding/node_modules/vite/dist/node/chunks/node.js:27725:18)
+      at async file:///E:/WebApp/Wdding/node_modules/vite/dist/node/chunks/node.js:27788:30
+      at async Promise.all (index 5)
+      at async TransformPluginContext.transform (file:///E:/WebApp/Wdding/node_modules/vite/dist/node/chunks/node.js:27756:4)
+      at async EnvironmentPluginContainer.transform (file:///E:/WebApp/Wdding/node_modules/vite/dist/node/chunks/node.js:30271:14)
+      at async loadAndTransform (file:///E:/WebApp/Wdding/node_modules/vite/dist/node/chunks/node.js:24532:26)
+[2m1:20:06 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m Pre-transform error: Failed to resolve import "@pdf-lib/fontkit" from "src/App.jsx". Does the file exist?
+  Plugin: [35mvite:import-analysis[39m
+  File: [36mE:/WebApp/Wdding/src/App.jsx[39m:19:20
+[33m  4  |  import logoUrl from "../rm.png";
+  5  |  import pdfUrl from "../2026.06.06.pdf?url";
+  6  |  import fontkit from "@pdf-lib/fontkit";
+     |                       ^
+  7  |  var _jsxFileName = "E:/WebApp/Wdding/src/App.jsx";
+  8  |  import { jsxDEV as _jsxDEV } from "react/jsx-dev-runtime";[39m
+[2m1:20:06 PM[22m [31m[1m[vite][22m[39m [31mInternal server error: Failed to resolve import "@pdf-lib/fontkit" from "src/App.jsx". Does the file exist?[39m
+  Plugin: [35mvite:import-analysis[39m
+  File: [36mE:/WebApp/Wdding/src/App.jsx[39m:19:20
+[33m  4  |  import logoUrl from "../rm.png";
+  5  |  import pdfUrl from "../2026.06.06.pdf?url";
+  6  |  import fontkit from "@pdf-lib/fontkit";
+     |                       ^
+  7  |  var _jsxFileName = "E:/WebApp/Wdding/src/App.jsx";
+  8  |  import { jsxDEV as _jsxDEV } from "react/jsx-dev-runtime";[39m
+      at TransformPluginContext._formatLog (file:///E:/WebApp/Wdding/node_modules/vite/dist/node/chunks/node.js:30486:39)
+      at TransformPluginContext.error (file:///E:/WebApp/Wdding/node_modules/vite/dist/node/chunks/node.js:30483:14)
+      at normalizeUrl (file:///E:/WebApp/Wdding/node_modules/vite/dist/node/chunks/node.js:27725:18)
+      at async file:///E:/WebApp/Wdding/node_modules/vite/dist/node/chunks/node.js:27788:30
+      at async Promise.all (index 5)
+      at async TransformPluginContext.transform (file:///E:/WebApp/Wdding/node_modules/vite/dist/node/chunks/node.js:27756:4)
+      at async EnvironmentPluginContainer.transform (file:///E:/WebApp/Wdding/node_modules/vite/dist/node/chunks/node.js:30271:14)
+      at async loadAndTransform (file:///E:/WebApp/Wdding/node_modules/vite/dist/node/chunks/node.js:24532:26)
+[2m1:20:07 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m Pre-transform error: Failed to resolve import "@pdf-lib/fontkit" from "src/App.jsx". Does the file exist?
+  Plugin: [35mvite:import-analysis[39m
+  File: [36mE:/WebApp/Wdding/src/App.jsx[39m:19:20
+[33m  4  |  import logoUrl from "../rm.png";
+  5  |  import pdfUrl from "../2026.06.06.pdf?url";
+  6  |  import fontkit from "@pdf-lib/fontkit";
+     |                       ^
+  7  |  var _jsxFileName = "E:/WebApp/Wdding/src/App.jsx";
+  8  |  import { jsxDEV as _jsxDEV } from "react/jsx-dev-runtime";[39m
+[2m1:20:07 PM[22m [31m[1m[vite][22m[39m [31mInternal server error: Failed to resolve import "@pdf-lib/fontkit" from "src/App.jsx". Does the file exist?[39m
+  Plugin: [35mvite:import-analysis[39m
+  File: [36mE:/WebApp/Wdding/src/App.jsx[39m:19:20
+[33m  4  |  import logoUrl from "../rm.png";
+  5  |  import pdfUrl from "../2026.06.06.pdf?url";
+  6  |  import fontkit from "@pdf-lib/fontkit";
+     |                       ^
+  7  |  var _jsxFileName = "E:/WebApp/Wdding/src/App.jsx";
+  8  |  import { jsxDEV as _jsxDEV } from "react/jsx-dev-runtime";[39m
+      at TransformPluginContext._formatLog (file:///E:/WebApp/Wdding/node_modules/vite/dist/node/chunks/node.js:30486:39)
+      at TransformPluginContext.error (file:///E:/WebApp/Wdding/node_modules/vite/dist/node/chunks/node.js:30483:14)
+      at normalizeUrl (file:///E:/WebApp/Wdding/node_modules/vite/dist/node/chunks/node.js:27725:18)
+      at async file:///E:/WebApp/Wdding/node_modules/vite/dist/node/chunks/node.js:27788:30
+      at async Promise.all (index 5)
+      at async TransformPluginContext.transform (file:///E:/WebApp/Wdding/node_modules/vite/dist/node/chunks/node.js:27756:4)
+      at async EnvironmentPluginContainer.transform (file:///E:/WebApp/Wdding/node_modules/vite/dist/node/chunks/node.js:30271:14)
+      at async loadAndTransform (file:///E:/WebApp/Wdding/node_modules/vite/dist/node/chunks/node.js:24532:26)
