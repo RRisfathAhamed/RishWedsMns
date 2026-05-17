@@ -495,7 +495,7 @@ function Invitation({ guest }) {
             <strong>Risfath Ahamed</strong>
             <span>Son of Mr &amp; Mrs Rifaideen</span>
             <em>&amp;</em>
-            <strong>Seenath Maneesha</strong>
+            <strong>Zeenath Maneesha</strong>
             <span>Daughter of Mr &amp; Mrs Ahamed</span>
           </div>
           <div className="hero-actions">
