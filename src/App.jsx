@@ -16,7 +16,7 @@ import {
 import { QRCodeSVG } from 'qrcode.react';
 import logoUrl from '../rm.png';
 import pdfUrl from '../2026.06.06.pdf?url';
-
+const SCRIPT_URL = import.meta.env.VITE_SCRIPT_URL || '/api/mock-sheets';
 
 const DESTINATION = {
   lat: 7.938067381810074,
@@ -82,9 +82,101 @@ async function openPersonalizedPdf(guest) {
   const { PDFDocument, StandardFonts, rgb } = await import('pdf-lib');
   const pdfWindow = window.open('', '_blank');
   if (pdfWindow) {
-    pdfWindow.document.write('<title>Preparing invitation...</title><p style="font-family:serif;padding:24px">Preparing your personalized invitation...</p>');
+    pdfWindow.document.write(`<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Preparing your Invitation…</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,300;1,300&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#080604;display:flex;align-items:center;justify-content:center;min-height:100vh;overflow:hidden;font-family:'Cormorant Garamond',Georgia,serif}
+
+/* ── Floating petals ── */
+.petal{position:fixed;border-radius:50% 0 50% 0;opacity:0;animation:fall linear infinite;pointer-events:none}
+@keyframes fall{
+  0%{transform:translateY(-80px) rotate(0deg);opacity:0}
+  8%{opacity:.75}
+  88%{opacity:.45}
+  100%{transform:translateY(110vh) rotate(720deg);opacity:0}
+}
+
+/* ── Sparkles ── */
+.sparkle{position:fixed;border-radius:50%;background:#f0d8b8;animation:twinkle ease-in-out infinite;pointer-events:none}
+@keyframes twinkle{
+  0%,100%{opacity:0;transform:scale(0)}
+  50%{opacity:1;transform:scale(1)}
+}
+
+/* ── Photo ── */
+.photo-wrap{display:flex;flex-direction:column;align-items:center;margin-bottom:24px}
+.photo-frame{position:relative;width:130px;height:130px;animation:floatIn 1.2s cubic-bezier(.34,1.56,.64,1) forwards,floatY 4s ease-in-out 1.2s infinite}
+@keyframes floatIn{from{opacity:0;transform:scale(.6) translateY(20px)}to{opacity:1;transform:scale(1) translateY(0)}}
+@keyframes floatY{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.shimmer-ring{position:absolute;inset:-5px;border-radius:50%;border:1.5px solid transparent;background:linear-gradient(#080604,#080604) padding-box,conic-gradient(#c89060,#f0d08050,#c89060,#f0d08050,#c89060) border-box;animation:shimSpin 4s linear infinite}
+@keyframes shimSpin{to{transform:rotate(360deg)}}
+.glow-bg{position:absolute;inset:-20px;border-radius:50%;background:radial-gradient(circle,rgba(200,140,90,.22) 0%,transparent 70%);animation:glowPulse 3s ease-in-out infinite}
+@keyframes glowPulse{0%,100%{opacity:.6;transform:scale(.95)}50%{opacity:1;transform:scale(1.05)}}
+.photo{width:130px;height:130px;border-radius:50%;object-fit:cover;object-position:center center;border:2px solid rgba(200,140,90,.4);box-shadow:0 8px 32px rgba(0,0,0,.6),0 0 20px rgba(200,140,90,.2);display:block;position:relative;z-index:1}
+
+/* ── Text ── */
+.names{font-family:'Great Vibes',cursive;font-size:44px;color:#c89060;letter-spacing:2px;animation:riseIn 1s ease .5s both}
+.divider{display:flex;align-items:center;gap:10px;justify-content:center;margin:10px 0;animation:riseIn 1s ease .7s both}
+.divider::before,.divider::after{content:'';flex:1;max-width:50px;height:1px;background:linear-gradient(90deg,transparent,rgba(200,140,90,.5))}
+.date{font-size:12px;letter-spacing:5px;color:rgba(200,160,110,.7);text-transform:uppercase}
+.msg{font-size:12px;letter-spacing:3.5px;text-transform:uppercase;color:rgba(200,160,110,.45);margin-top:28px;animation:riseIn 1s ease .9s both}
+@keyframes riseIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+
+/* ── Bouncing dots ── */
+.dots{display:flex;gap:7px;justify-content:center;margin-top:14px;animation:riseIn 1s ease 1.1s both}
+.dot{width:6px;height:6px;border-radius:50%;background:#c89060;animation:bounce 1.6s ease-in-out infinite}
+.dot:nth-child(2){animation-delay:.25s}.dot:nth-child(3){animation-delay:.5s}
+@keyframes bounce{0%,100%{transform:translateY(0);opacity:.3}50%{transform:translateY(-7px);opacity:1}}
+</style>
+</head>
+<body>
+<div style="text-align:center;position:relative;z-index:10">
+  <div class="photo-wrap">
+    <div class="photo-frame">
+      <div class="glow-bg"></div>
+      <div class="shimmer-ring"></div>
+      <img class="photo" src="${logoUrl}" alt="Risfath & Maneesha"/>
+    </div>
+  </div>
+  <div class="names">Risfath &amp; Maneesha</div>
+  <div class="divider"><span class="date">06 · 06 · 2026</span></div>
+  <div class="msg">Crafting your invitation</div>
+  <div class="dots"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+</div>
+<script>
+  // petals
+  const colors=['#f4c2c2','#f0b8b8','#e8d0c0','#f8e0d0'];
+  for(let i=0;i<22;i++){
+    const p=document.createElement('div');
+    p.className='petal';
+    const s=6+Math.random()*9;
+    p.style.cssText='left:'+Math.random()*100+'vw;width:'+s+'px;height:'+(s*1.4)+'px;background:'+colors[Math.floor(Math.random()*colors.length)]+';animation-duration:'+(7+Math.random()*9)+'s;animation-delay:'+(Math.random()*8)+'s';
+    document.body.appendChild(p);
   }
-  const existingPdfBytes = await fetch(pdfUrl).then((response) => response.arrayBuffer());
+  // sparkles
+  for(let i=0;i<35;i++){
+    const sp=document.createElement('div');
+    sp.className='sparkle';
+    const s=2+Math.random()*4;
+    sp.style.cssText='left:'+Math.random()*100+'vw;top:'+Math.random()*100+'vh;width:'+s+'px;height:'+s+'px;animation-duration:'+(2+Math.random()*3)+'s;animation-delay:'+(Math.random()*5)+'s';
+    document.body.appendChild(sp);
+  }
+<\/script>
+</body>
+</html>`);
+    pdfWindow.document.close();
+  }
+  const [existingPdfBytes] = await Promise.all([
+    fetch(pdfUrl).then((response) => response.arrayBuffer()),
+    new Promise((resolve) => window.setTimeout(resolve, 4000)),
+  ]);
   const pdfDoc = await PDFDocument.load(existingPdfBytes);
   const invitationPage = pdfDoc.getPage(1);
   const typedFont = await pdfDoc.embedFont(StandardFonts.TimesRomanBoldItalic);
@@ -284,10 +376,6 @@ function Details() {
           <MapPinned size={18} aria-hidden="true" />
           Show Directions
         </button>
-        <a href={MAP_SEARCH_URL} target="_blank" rel="noreferrer">
-          <ExternalLink size={18} aria-hidden="true" />
-          Open Location
-        </a>
         <div className="qr-wrap" aria-label="Location QR code">
           <QRCodeSVG value={MAP_SEARCH_URL} size={116} level="M" marginSize={2} />
         </div>
@@ -331,10 +419,13 @@ function WishForm({ guest }) {
   const [message, setMessage] = useState('');
   const [phone, setPhone] = useState('');
   const [guestCount, setGuestCount] = useState('1');
+  const [submitting, setSubmitting] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState(false);
 
   const whatsappUrl = useMemo(() => {
     const body = [
-      'Waleema Blessing',
+      'Waleema RSVP & Blessing',
       `Name: ${guest}`,
       `Contact: ${phone.trim() || '-'}`,
       `Guests: ${guestCount || '1'}`,
@@ -344,78 +435,144 @@ function WishForm({ guest }) {
     return `https://wa.me/94769140178?text=${encodeURIComponent(body)}`;
   }, [attendance, guest, guestCount, message, phone]);
 
+  async function handleSubmit(event) {
+    event.preventDefault();
+    if (!SCRIPT_URL) {
+      // If SCRIPT_URL is not configured, fall back to open WhatsApp directly
+      window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+      return;
+    }
+
+    setSubmitting(true);
+    setSubmitError(false);
+
+    try {
+      await fetch(SCRIPT_URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'text/plain;charset=utf-8',
+        },
+        body: JSON.stringify({
+          action: 'rsvp',
+          name: guest,
+          phone: phone,
+          guestsCount: guestCount,
+          attendance: attendance,
+          message: message,
+        }),
+      });
+      setSubmitted(true);
+    } catch (error) {
+      console.warn('Error saving RSVP to Google Sheets:', error);
+      setSubmitError(true);
+    } finally {
+      setSubmitting(false);
+    }
+  }
+
   return (
     <section className="section-shell wish-section" aria-labelledby="wish-title">
       <div className="section-heading compact">
         <h2 id="wish-title">Send a Wish</h2>
         <p>Leave your blessings for the couple</p>
       </div>
-      <form className="wish-form">
-        <label htmlFor="wish-name">Name</label>
-        <input id="wish-name" value={guest} readOnly />
-
-        <div className="form-row">
-          <label htmlFor="wish-phone">
-            Contact number
-            <input
-              id="wish-phone"
-              inputMode="tel"
-              value={phone}
-              onChange={(event) => setPhone(event.target.value)}
-              placeholder="Your phone or WhatsApp"
-            />
-          </label>
-          <label htmlFor="guest-count">
-            Guests
-            <input
-              id="guest-count"
-              inputMode="numeric"
-              min="1"
-              type="number"
-              value={guestCount}
-              onChange={(event) => setGuestCount(event.target.value)}
-            />
-          </label>
+      {submitted ? (
+        <div className="wish-success-card">
+          <div className="success-icon-ring">
+            <Check size={36} className="success-check" aria-hidden="true" />
+          </div>
+          <h3>Blessing Sent!</h3>
+          <p>Your RSVP details have been recorded successfully. Thank you for your warm wishes!</p>
+          <div className="success-actions">
+            <a className="whatsapp-button" href={whatsappUrl} target="_blank" rel="noreferrer">
+              <MessageCircle size={18} aria-hidden="true" />
+              Also Notify via WhatsApp
+            </a>
+          </div>
         </div>
+      ) : (
+        <form onSubmit={handleSubmit} className="wish-form">
+          <label htmlFor="wish-name">Name</label>
+          <input id="wish-name" value={guest} readOnly />
 
-        <fieldset>
-          <legend>Will you be attending?</legend>
-          <label className="choice">
-            <input
-              type="radio"
-              name="attendance"
-              checked={attendance === 'Yes, I will be there'}
-              onChange={() => setAttendance('Yes, I will be there')}
-            />
-            <Check size={18} aria-hidden="true" />
-            Yes, I will be there
-          </label>
-          <label className="choice">
-            <input
-              type="radio"
-              name="attendance"
-              checked={attendance === 'Unable to attend'}
-              onChange={() => setAttendance('Unable to attend')}
-            />
-            <X size={18} aria-hidden="true" />
-            Unable to attend
-          </label>
-        </fieldset>
+          <div className="form-row">
+            <label htmlFor="wish-phone">
+              Contact number
+              <input
+                id="wish-phone"
+                inputMode="tel"
+                value={phone}
+                onChange={(event) => setPhone(event.target.value)}
+                placeholder="Your phone or WhatsApp"
+              />
+            </label>
+            <label htmlFor="guest-count">
+              Guests
+              <input
+                id="guest-count"
+                inputMode="numeric"
+                min="1"
+                type="number"
+                value={guestCount}
+                onChange={(event) => setGuestCount(event.target.value)}
+              />
+            </label>
+          </div>
 
-        <label htmlFor="blessing">Your Blessing</label>
-        <textarea
-          id="blessing"
-          value={message}
-          onChange={(event) => setMessage(event.target.value)}
-          placeholder="Write your heartfelt wishes for the couple..."
-          rows={5}
-        />
+          <fieldset>
+            <legend>Will you be attending?</legend>
+            <label className="choice">
+              <input
+                type="radio"
+                name="attendance"
+                checked={attendance === 'Yes, I will be there'}
+                onChange={() => setAttendance('Yes, I will be there')}
+              />
+              <Check size={18} aria-hidden="true" />
+              Yes, I will be there
+            </label>
+            <label className="choice">
+              <input
+                type="radio"
+                name="attendance"
+                checked={attendance === 'Unable to attend'}
+                onChange={() => setAttendance('Unable to attend')}
+              />
+              <X size={18} aria-hidden="true" />
+              Unable to attend
+            </label>
+          </fieldset>
 
-        <a className="send-button" href={whatsappUrl} target="_blank" rel="noreferrer">
-          <Send size={18} aria-hidden="true" />
-          Send Blessing
-        </a>
-      </form>
+          <label htmlFor="blessing">Your Blessing</label>
+          <textarea
+            id="blessing"
+            value={message}
+            onChange={(event) => setMessage(event.target.value)}
+            placeholder="Write your heartfelt wishes for the couple..."
+            rows={5}
+          />
+
+          {submitError && (
+            <p className="error-note" role="alert">
+              Unable to save to Google Sheets. You can retry, or send directly via WhatsApp below!
+            </p>
+          )}
+
+          <div className="wish-actions-row">
+            <button type="submit" className="send-button" disabled={submitting}>
+              <Send size={18} aria-hidden="true" />
+              {submitting ? 'Saving...' : 'Send Blessing'}
+            </button>
+
+            {submitError && (
+              <a className="whatsapp-fallback-button" href={whatsappUrl} target="_blank" rel="noreferrer">
+                <MessageCircle size={18} aria-hidden="true" />
+                Send via WhatsApp
+              </a>
+            )}
+          </div>
+        </form>
+      )}
     </section>
   );
 }
@@ -495,7 +652,7 @@ function Invitation({ guest }) {
             <strong>Risfath Ahamed</strong>
             <span>Son of Mr &amp; Mrs Rifaideen</span>
             <em>&amp;</em>
-            <strong>Seenath Maneesha</strong>
+            <strong>Zeenath Maneesha</strong>
             <span>Daughter of Mr &amp; Mrs Ahamed</span>
           </div>
           <div className="hero-actions">
@@ -527,9 +684,44 @@ function Invitation({ guest }) {
 export default function App() {
   const [stage, setStage] = useState('splash');
   const [guest, setGuest] = useState(DEFAULT_GUEST);
+  const [isPrefilled, setIsPrefilled] = useState(false);
+
+  useEffect(() => {
+    try {
+      const params = new URLSearchParams(window.location.search);
+      const nameParam = params.get('g') || params.get('name') || params.get('guest') || params.get('to');
+      if (nameParam) {
+        const cleanName = normalizeName(nameParam);
+        if (cleanName) {
+          setGuest(cleanName);
+          setIsPrefilled(true);
+        }
+      }
+    } catch (error) {
+      console.warn('Failed to parse guest name from URL parameters:', error);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (stage === 'invite' && isPrefilled && guest && guest !== DEFAULT_GUEST && SCRIPT_URL) {
+      // Fire-and-forget logging to track who opened the link
+      fetch(SCRIPT_URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'text/plain;charset=utf-8',
+        },
+        body: JSON.stringify({
+          action: 'open',
+          name: guest,
+        }),
+      }).catch((error) => {
+        console.warn('Google Sheets open logging skipped or failed:', error);
+      });
+    }
+  }, [stage, isPrefilled, guest]);
 
   if (stage === 'splash') {
-    return <Splash onDone={() => setStage('name')} />;
+    return <Splash onDone={() => setStage(isPrefilled ? 'invite' : 'name')} />;
   }
 
   if (stage === 'name') {

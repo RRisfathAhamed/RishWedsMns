@@ -4,3 +4,5 @@ Waleema/
 *.log
 /*.pid
 /.env
+# Local Netlify folder
+.netlify
