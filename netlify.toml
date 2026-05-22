@@ -2,6 +2,9 @@
   command = "npm run build"
   publish = "dist"
 
+[build.environment]
+  VITE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzQOisAXgsqTRGcN0_94siM1m00SHAZiTT1dN-8gGAAhPrnefpddt6ShwCdOTmb_FsS/exec"
+
 [[redirects]]
   from = "/*"
   to = "/index.html"
